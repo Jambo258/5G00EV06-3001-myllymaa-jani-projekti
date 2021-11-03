@@ -8,5 +8,7 @@ characters fetched by id and you can add any of those characters to a list. The 
 the homeview page.
 Im going to use React Router for this assignment and it will be published on heroku in the future.
 
+API : https://swapi.dev/api/
+
 
 Heroku link: will be added later on  
