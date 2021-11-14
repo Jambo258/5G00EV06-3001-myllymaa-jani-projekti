@@ -11,4 +11,11 @@ Im going to use React Router for this assignment and it will be published on her
 API : https://swapi.dev/api/
 
 
-Heroku link: will be added later on  
+Heroku link: will be added later on
+
+Release 1: 2021-11-15 features
+
+- User is able to add favorite starwars characters into a list
+- User is able to delete added starwars characters from a list
+- User is unable to add empty data into a list
+- User is unable to add same starwars character twice
