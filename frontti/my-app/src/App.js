@@ -9,9 +9,10 @@ import {
   NavLink,
 } from "react-router-dom";
 import Characters from "./Characters";
-
+import Movies from "./Movies";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "semantic-ui-css/semantic.min.css";
 
 function App() {
   let [characters, setCharacters] = React.useState([
@@ -20,6 +21,7 @@ function App() {
       name: "Test Character",
       height: "180",
       mass: "80",
+      movies: [],
     },
   ]);
 
@@ -49,6 +51,14 @@ function App() {
               >
                 View content
               </NavLink>
+              <NavLink
+                to={"/Movies"}
+                exact
+                activeStyle={{ color: "red" }}
+                className="nav-link"
+              >
+                View characters movies
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -64,6 +74,9 @@ function App() {
         </Route>
         <Route exact path="/Characters">
           <Characters characters={characters} setCharacters={setCharacters} />
+        </Route>
+        <Route exact path="/Movies">
+          <Movies characters={characters} />
         </Route>
       </Switch>
     </Router>

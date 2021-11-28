@@ -11,7 +11,7 @@ Im going to use React Router for this assignment and it will be published on her
 API : https://swapi.dev/api/
 
 
-Heroku link: will be added later on
+Heroku link: https://swapiprojekti.herokuapp.com/
 
 Release 1: 2021-11-15 features
 
@@ -19,3 +19,14 @@ Release 1: 2021-11-15 features
 - User is able to delete added starwars characters from a list
 - User is unable to add empty data into a list
 - User is unable to add same starwars character twice
+
+Release 2: 2021-11-29 features
+
+- User is able to see in which starwars movies those added characters were
+- Project is uploaded into Heroku
+
+Known bugs
+
+- If user decides to manually write negative numbers or zero to input field application tries to fetch with that value
+
+Youtube link: https://youtu.be/oZyKJ_d2qQs

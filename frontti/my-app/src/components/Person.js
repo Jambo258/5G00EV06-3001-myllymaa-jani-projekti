@@ -6,6 +6,9 @@ function Person(props) {
   let [name, setName] = React.useState("");
   let [mass, setMass] = React.useState("");
   let [height, setHeight] = React.useState("");
+  let [movies, setMovies] = React.useState([]);
+
+  let moviesArr = [];
 
   React.useEffect(() => {
     async function fetchCharacter() {
@@ -15,11 +18,25 @@ function Person(props) {
         let hr = await fetch(`https://swapi.dev/api/people/${props.id}/`);
         let data = await hr.json();
         console.log(data.name);
+
+        console.log(data.films);
         setName(data.name);
         setHeight(data.height);
         setMass(data.mass);
+
+        let moviedata = data.films;
+
+        for (const key in moviedata) {
+          let hr2 = await fetch(moviedata[key]);
+          let data2 = await hr2.json();
+          console.log(data2.title);
+          moviesArr.push(<li key={key}>{data2.title}</li>);
+        }
+
+        setMovies(moviesArr);
       }
     }
+
     fetchCharacter();
   }, [props.id]);
 
@@ -40,7 +57,13 @@ function Person(props) {
       if (!alreadyinarray) {
         props.setCharacters([
           ...props.characters,
-          { id: props.idnumber, name: name, height: height, mass: mass },
+          {
+            id: props.idnumber,
+            name: name,
+            height: height,
+            mass: mass,
+            movies: movies,
+          },
         ]);
         props.setIdnumber(props.idnumber + 1);
       }
