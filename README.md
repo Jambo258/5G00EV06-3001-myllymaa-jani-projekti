@@ -29,4 +29,3 @@ Known bugs
 
 - If user decides to manually write negative numbers or zero to input field application tries to fetch with that value
 
-Youtube link: https://youtu.be/oZyKJ_d2qQs
